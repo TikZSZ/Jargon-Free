@@ -62,7 +62,7 @@ export const ShowFilteredText = (props: { text: string }) => {
         <div>
           <>
             {Object.values(filteredText).map((page)=>{
-              const {title,extract} = page
+              const {extract} = page
               if(extract){
                 return(
                   <div className="my-10">
