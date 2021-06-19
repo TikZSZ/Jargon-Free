@@ -1,5 +1,5 @@
-import { lazy } from "react"
-const ShowFetchedData=lazy(()=>import("./ShowFetched"))
+import ShowFetchedData from "./ShowFetched"
+
 
 export function AfterRecogInfo(props:{text:string|null}){
   const {text}=props
