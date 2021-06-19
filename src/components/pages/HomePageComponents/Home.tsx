@@ -8,10 +8,10 @@ import { Reference } from "./Reference";
 import { InnerFlexDiv } from "./InnerFlexDiv";
 import { Container } from "../Container";
 
-export const Home = () => {
+export default function Home() {
   return (
     <Container>
-      <h1 className="text-3xl mt-10 font-semibold ">Welcome to JargonFree</h1>
+      <h1 className="text-3xl mt-7 sm:mt-10 font-semibold ">Welcome to JargonFree</h1>
       <p
         className="home-para sm:w-2/3 mx-auto mt-10 xl:mt-5"
         style={{ fontSize: "1.2rem" }}
@@ -25,7 +25,7 @@ export const Home = () => {
       <FlexContainer>
         <ImageComponent src={jargoPic} />
         <InnerFlexDiv>
-          <JargonPara>How do we Help?</JargonPara>
+          <JargonPara color={"black"}>How do we Help?</JargonPara>
           <JargonPara isLast={true}>
             JargonFree gives u information thats required to "deJargon" the
             content
@@ -57,7 +57,7 @@ export const Home = () => {
       <FlexContainer>
       <ImageComponent src={tesseract} />
         <InnerFlexDiv>
-          <JargonPara>
+          <JargonPara color={"black"}>
             What Is
             <Reference
               text="Tessract"

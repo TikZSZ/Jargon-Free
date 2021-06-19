@@ -3,8 +3,19 @@
 @tailwind utilities;
 
 .jargon-para{
-  @apply  sm:w-3/4 mx-auto mt-10 lg:w-2/3  sm:mt-1 lg:mt-1 font-medium;
+  @apply  sm:w-3/4 mx-auto mt-5 lg:w-2/3  sm:mt-1 lg:mt-1 font-medium;
 }
 p{
   @apply text-blue-300
+}
+
+
+label {
+  background-color: indigo;
+  color: white;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
 }

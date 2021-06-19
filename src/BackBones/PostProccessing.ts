@@ -11,31 +11,23 @@ export class PostProcess{
     const regExString = this.wordsToRemove.map((word)=>{
       return `\\b${word}\\b`
     }).join("|")
-    
     if(extraModifiers){
       const regEx=RegExp(`${regExString}|${extraModifiers}`,flags)
       return regEx
     }
-
     return RegExp(regExString,flags)
   }
 
   removeThings(flags:string="",extraModifiers:string|null=null){
     const regExString=this.getRegExpString(flags,extraModifiers)
-    const filteredText=this.content.replace(regExString,"")
-    console.log(regExString);
-    
+    const filteredText=this.content.replace(regExString,"") 
     const filteredArray= filteredText.split(" ").filter((word)=>{
       if(word===""||word==="\n"){
         return false
       }
       return true
-    })
-    
-    
-    
-    
-    return filteredArray.join("|")
+    }) 
+    return filteredArray.join("|").replace("\\n","")
   }
 }
 
