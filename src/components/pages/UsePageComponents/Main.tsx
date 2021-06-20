@@ -51,7 +51,7 @@ export default function Main(){
       )
     }else if(submittedFile){
       return(
-        <div style={{width:"50%" ,margin:"0 2.63rem 0 auto"}}>
+        <div style={{width:"50%" ,margin:"0 2.64rem 0 auto"}}>
           <Loader type="ThreeDots" 
           color="#00BFFF"
           height={100}
