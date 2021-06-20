@@ -70,7 +70,7 @@ export default function ShowFilteredText(props: { text: string }) {
         <div>Filtering Text</div>
         <div
           className="h-screen"
-          style={{ width:"50%", margin: "12rem 2.6rem 0 auto" }}
+          style={{ width:"50%", margin: "12rem 2.63rem 0 auto" }}
         >
           <Loader
             type="Bars"

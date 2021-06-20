@@ -94,6 +94,7 @@ export default function Home() {
         <button
           onClick={() => {
             history.push("/use");
+            window.scrollTo(0,0)
           }}
           className="bg-transparent mb-10 focus:outline-none border-gray-800 border-2  p-3 hover:border-white hover:text-black rounded-lg text-white"
         >

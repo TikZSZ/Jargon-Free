@@ -51,7 +51,7 @@ export default function Main(){
       )
     }else if(submittedFile){
       return(
-        <div style={{width:"50%" ,margin:"0 2.6rem 0 auto"}}>
+        <div style={{width:"50%" ,margin:"0 2.63rem 0 auto"}}>
           <Loader type="ThreeDots" 
           color="#00BFFF"
           height={100}
@@ -66,7 +66,6 @@ export default function Main(){
 
   return (
     <div className="p-6 sm:p-8 my-5 sm:my-8 min-h-screen text-center">
-
       <div className="mx-auto">
         <label className="mx-auto">
           <input

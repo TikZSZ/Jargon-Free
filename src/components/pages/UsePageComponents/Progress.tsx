@@ -17,7 +17,7 @@ export const ProgressBar: FunctionComponent<Progress> = ({progress,status,jobId}
             <span className="text-lg ">
               Progress:{Math.ceil(progressInt)}
             </span>
-            <div style={{width:"50%" ,margin:"20px 2.2rem 0 auto"}}>
+            <div style={{width:"50%" ,margin:"20px 2.63rem 0 auto"}}>
             <Loader type="Circles" 
               color="#00BFFF"
               height={100}

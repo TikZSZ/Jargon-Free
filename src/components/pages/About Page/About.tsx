@@ -1,10 +1,9 @@
 import { Section } from "./Section";
 import { Para} from "./Paragraph";
 import { Heading } from "./Heading";
-import { ImageComponent } from "../ImageComponent";
 export default function About(){
   return(
-    <div className="p-8 sm:p-10 my-5 sm:my-8 min-h-screen">
+    <div className="p-8 sm:p-10  sm:my-8 min-h-screen">
       <Section>
         <Heading>
           Who Am i ?
@@ -37,13 +36,13 @@ export default function About(){
         </h1>
         <div className="flex bottom-0 mx-auto sm:w-2/3 flex-nowrap  justify-around justify-self-center mt-10">
           <a rel="noreferrer" target="blank" href="https://twitter.com/TikZ41414516">
-            <ImageComponent src="https://img.icons8.com/color/48/000000/twitter--v2.png" className=" "/>
+            <i className="fab FA  fa-twitter"></i>
           </a>
           <a rel="noreferrer" target="blank" href="https://github.com/TikZSZ">
-            <ImageComponent src="https://img.icons8.com/nolan/64/github.png" className=" "/>
+            <i className="fab FA fa-github"></i>
           </a>
           <a  href="mailto:ad519195@gmail.com">
-            <ImageComponent src="https://img.icons8.com/color/48/000000/gmail-new.png" className=" "/>
+            <i className="fas  FA fa-envelope"></i>
           </a>
         </div>     
       </div>
