@@ -9,7 +9,7 @@ export default function Logo(){
       
       <p className="text-white focus:text-white hover:text-green-300 font-normal 
       base text-lg md:text-xl mt-0.5 font-mono  ml-4">
-        JargoFree
+        JargonFree
       </p>
   </a>
   )

@@ -20,11 +20,16 @@ interface Pages {
   };
 }
 
+interface FilteredText{
+  pages:Pages,
+  wordsFoundForSearch:string
+}
+
 
 type Status="fulfilled"|"failed"|"loading"|"idle"
 
 export default function ShowFilteredText(props: { text: string }) {
-  const [filteredText, setFilteredText] = useState<Pages | null>(null);
+  const [filteredText, setFilteredText] = useState<FilteredText | null>(null);
   const [status,setStatus]=useState<Status>("idle")
 
   useEffect(() => {
@@ -32,8 +37,8 @@ export default function ShowFilteredText(props: { text: string }) {
       const postProcess = new PostProcess(props.text, CommonWords);
       const wordsToBeSearched = postProcess.removeThings(
         "gmi",
-        '[.!;:,"”()%=\\[\\]?]|w+;w+|\\d*|\\d*[-]\\d*|\\n'
-      );
+        `[\\-.!;:,"'’”()%=\\[\\]\\?\\d+]`
+      )
       
       console.log(wordsToBeSearched);
       
@@ -56,7 +61,8 @@ export default function ShowFilteredText(props: { text: string }) {
             data: { query },
           } = response;
           if (query !== undefined && query.pages !== undefined) {
-            setFilteredText(response.data.query!.pages);
+            console.log(query);
+            setFilteredText({pages:response.data.query!.pages,wordsFoundForSearch:wordsToBeSearched});
             setStatus("fulfilled")
           }else{
             setStatus("failed")
@@ -87,23 +93,24 @@ export default function ShowFilteredText(props: { text: string }) {
   function renderFetchedData(){
     return (
       <div>
-        <>
-          {Object.values(filteredText!).map((page) => {
-            const { title, extract } = page;
-            if (extract && extract.length > 35) {
-              return (
-                <div className="my-10" key={title}>
-                  <h1>Title: {page.title}</h1>
-                  <p className="w-11/12 text-blue-200 md:text-xl leading-7 sm:w-2/3 mx-auto">
-                    <span className="text-black">Definition: </span>
-                    {page.extract}
-                  </p>
-                </div>
-              );
-            }
-            return "";
-          })}
-        </>
+        {Object.values(filteredText!.pages).map((page) => {
+          const { title, extract } = page;
+          if (extract && extract.length > 35) {
+            return (
+              <div className="my-10" key={title}>
+                <h1>Title: {page.title}</h1>
+                <p className="w-11/12 text-blue-200 md:text-xl leading-7 sm:w-2/3 mx-auto">
+                  <span className="text-black">Definition: </span>
+                  {page.extract}
+                </p>
+              </div>
+            );
+          }
+          return "";
+        })}
+        <div>
+          <p>Words Found For Search: {filteredText?.wordsFoundForSearch}</p>
+        </div>
       </div>
     );
     

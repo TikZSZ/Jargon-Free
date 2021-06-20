@@ -13,9 +13,9 @@ export const ProgressBar: FunctionComponent<Progress> = ({progress,status,jobId}
       const progressInt=Math.ceil(parseFloat(progress) * 100)
       if(progressInt<100){
         return(
-          <>
+          <div className="sm:my-auto">
             <span className="text-lg ">
-              Progress:{Math.ceil(progressInt)}
+              Progress: {Math.ceil(progressInt)}
             </span>
             <div style={{width:"50%" ,margin:"20px 2.63rem 0 auto"}}>
             <Loader type="Circles" 
@@ -25,11 +25,11 @@ export const ProgressBar: FunctionComponent<Progress> = ({progress,status,jobId}
               visible={true}/>
             </div>
             <p className="mx-auto text-lg mt-5 text-blue-300">Scanning gets faster on every repeated scan </p>
-          </>
+          </div>
         );
       }
       return (
-        <p className="text-blue-300 text-lg">Recognition Complete</p>
+        <p className="text-blue-300 text-lg ">Recognition Complete</p>
       )
     }
 
