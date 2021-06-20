@@ -12,7 +12,7 @@ export const NavItem: FunctionComponent<NavLink> = (props) => {
         props.onNavClick(props.link);
       }}
     >
-      <button className="px-2 focus:outline-none focus:text-white sm:text-lg text-white cursor-pointer hover:text-blue-400">
+      <button className="px-2 focus:outline-none focus:text-white md:text-xl text-white cursor-pointer hover:text-blue-400">
         {props.whereTo}
       </button>
     </li>

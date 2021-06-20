@@ -7,6 +7,7 @@ import { SuspenseLoader } from "./components/SuspenseLoader";
 const Logo=lazy(()=>import("./components/navbar/NavLogo"))
 const Home=lazy(()=>import("./components/pages/HomePageComponents/Home"))
 const Main=lazy(()=>import("./components/pages/UsePageComponents/Main"))
+const About=lazy(()=>import("./components/pages/About Page/About"))
 
 
 function App() {
@@ -14,24 +15,26 @@ function App() {
   return (
     <div>
         {!isMobile?(
-          <div className="App bg-gradient-to-br from-blue-400  via-blue-600 to-blue-600 p-6 ">
+          <div className="App bg-gradient-to-br from-green-400  via-blue-600 to-blue-600 p-6 ">
             <Suspense fallback={<SuspenseLoader/>}>
             <Navbar/>
               <Switch>
                 <Route exact path='/' component={Home} />
                 <Route path='/use' component={Main} />
                 <Route  path='/test' component={SuspenseLoader} />
+                <Route  path='/about' component={About} />
               </Switch>
             </Suspense>
           </div>
         ):(
-          <div className="bg-gradient-to-br from-blue-400  via-blue-600 to-blue-600  pt-1">
+          <div className="bg-gradient-to-br from-green-400  via-blue-600 to-blue-600  pt-1">
             <Suspense fallback={<SuspenseLoader/>}>
               <Logo/>
               <Switch>
                 <Route exact path='/' component={Home} />
                 <Route path='/use' component={Main} />
                 <Route  path='/test' component={SuspenseLoader} />
+                <Route  path='/about' component={About} />
               </Switch>
               <Navbar/>
             </Suspense>

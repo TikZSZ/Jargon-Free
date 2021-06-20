@@ -32,8 +32,11 @@ export default function ShowFilteredText(props: { text: string }) {
       const postProcess = new PostProcess(props.text, CommonWords);
       const wordsToBeSearched = postProcess.removeThings(
         "gmi",
-        '[.!;:,"”]|w+;w+|\\d*|\\d*[-]\\d*|\\n'
+        '[.!;:,"”()%=\\[\\]?]|w+;w+|\\d*|\\d*[-]\\d*|\\n'
       );
+      
+      console.log(wordsToBeSearched);
+      
       setStatus("loading")
       axios
         .get<WikiApi>("https://en.wikipedia.org/w/api.php", {
@@ -67,7 +70,7 @@ export default function ShowFilteredText(props: { text: string }) {
         <div>Filtering Text</div>
         <div
           className="h-screen"
-          style={{ width: "50%", margin: "12rem 2.2rem 0 auto" }}
+          style={{ width:"50%", margin: "12rem 2.6rem 0 auto" }}
         >
           <Loader
             type="Bars"

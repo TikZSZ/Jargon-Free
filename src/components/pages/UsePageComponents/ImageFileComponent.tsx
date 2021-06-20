@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import { FlexContainer } from "../HomePageComponents/FlexContainer";
-import { ImageComponent } from "../HomePageComponents/ImageComponent";
+import { ImageComponent } from "../ImageComponent";
 
 
 interface ImageProps {

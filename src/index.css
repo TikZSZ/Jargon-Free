@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .jargon-para{
-  @apply  sm:w-3/4 mx-auto mt-5 lg:w-2/3  sm:mt-1 lg:mt-1 font-medium;
+  @apply  sm:w-3/4 mx-auto mt-5 lg:w-2/3  sm:mt-1 lg:mt-1 ;
 }
 p{
   @apply text-blue-300
