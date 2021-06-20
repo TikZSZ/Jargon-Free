@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import { useState,useRef } from "react";
+import { useState} from "react";
 import Loader from "react-loader-spinner";
 
 type Status = "loaded" | "loading" | "failed to load";
@@ -19,7 +19,7 @@ export const ImageComponent: FunctionComponent<{ src: string,className?:string }
         alt=""
       />
       {loadingStatus === "loading" && (
-        <div className="mx-auto w-1/2 lg:w-auto" style={{margin:"0 2.64rem 0 auto"}}>
+        <div className="mx-auto w-1/2 lg:w-auto" style={{margin:"0 2.63rem 0 auto"}}>
           <Loader
           type="Bars"
           color="#00BFFF"

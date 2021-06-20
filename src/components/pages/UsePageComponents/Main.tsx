@@ -51,6 +51,7 @@ export default function Main(){
       )
     }else if(submittedFile){
       return(
+        <>
         <div style={{width:"50%" ,margin:"0 2.64rem 0 auto"}}>
           <Loader type="ThreeDots" 
           color="#00BFFF"
@@ -58,6 +59,8 @@ export default function Main(){
           width={100}
           visible={true}/>
         </div>
+        <p className="mx-auto text-lg text-white">It might take a little longer for first time due to lazing loading of logic and ocr engine. It will be fast next time</p>
+        </>
       )
     }
     return null

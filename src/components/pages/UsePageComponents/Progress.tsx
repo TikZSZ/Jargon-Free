@@ -24,6 +24,7 @@ export const ProgressBar: FunctionComponent<Progress> = ({progress,status,jobId}
               width={100}
               visible={true}/>
             </div>
+            <p className="mx-auto text-lg mt-5 text-blue-300">Scanning gets faster on every repeated scan </p>
           </>
         );
       }
